@@ -10,6 +10,9 @@
     "ain2": "^2.0.0",
     "pm2": "latest"
   },
+  "config": {
+    "facility" : "syslog"
+  },
   "apps": [
     {
       "name": "pm2-syslog",

@@ -1,7 +1,7 @@
 {
-  "name": "pm2-syslog",
+  "name": "pm2-syslog-mod",
   "version": "2.1.0",
-  "description": "Redirect PM2/apps logs to syslog",
+  "description": "Redirect PM2/apps logs to syslog(mod)",
   "main": "probe.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,7 @@
   },
   "apps": [
     {
-      "name": "pm2-syslog",
+      "name": "pm2-syslog-mod",
       "script": "app.js"
     }
   ],

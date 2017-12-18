@@ -8,9 +8,7 @@ var logger    = new SysLogger({tag: 'pm2',  facility: config.facility});
 pm2.launchBus(function(err, bus) {
   bus.on('*', function(event, data){
     if (event == 'process:event') {
-      logger.warn('facility=%s app=pm2 target_app=%s target_id=%s restart_count=%s status=%s',
-                  config.facility,
-                  data.process.name,
+      logger.warn("\t" + "\t" +'ng-e.id-api id=%s restart_count=%s status=%s',
                   data.process.pm_id,
                   data.process.restart_time,
                   data.event);
@@ -18,10 +16,10 @@ pm2.launchBus(function(err, bus) {
   });
 
   bus.on('log:err', function(data) {
-    logger.error('app=%s id=%s line=%s', data.process.name, data.process.pm_id, data.data);
+    logger.error("\t" + "\t" +"\t" + "\t"+ 'ERROR ng-e.id-api id=%s ==>%s', data.process.pm_id, data.data);
   });
 
   bus.on('log:out', function(data) {
-    logger.log('app=%s id=%s line=%s', data.process.name, data.process.pm_id, data.data);
+    logger.log("\t" + "\t" +'ng-e.id-api id=%s "%s"', data.process.pm_id, data.data);
   });
 });

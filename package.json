@@ -1,6 +1,6 @@
 {
-  "name": "pm2-syslog-mod",
-  "version": "2.1.0",
+  "name": "pm2-syslog",
+  "version": "2.1.1",
   "description": "Redirect PM2/apps logs to syslog(mod)",
   "main": "probe.js",
   "scripts": {

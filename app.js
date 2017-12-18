@@ -8,7 +8,8 @@ var logger    = new SysLogger({tag: 'pm2',  facility: config.facility});
 pm2.launchBus(function(err, bus) {
   bus.on('*', function(event, data){
     if (event == 'process:event') {
-      logger.warn('app=pm2 target_app=%s target_id=%s restart_count=%s status=%s',
+      logger.warn('facility=%s app=pm2 target_app=%s target_id=%s restart_count=%s status=%s',
+                  config.facility,
                   data.process.name,
                   data.process.pm_id,
                   data.process.restart_time,

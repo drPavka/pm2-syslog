@@ -8,18 +8,17 @@ var logger    = new SysLogger({tag: 'pm2',  facility: config.facility});
 pm2.launchBus(function(err, bus) {
   bus.on('*', function(event, data){
     if (event == 'process:event') {
-      logger.warn("\t" + "\t" +'ng-e.id-api id=%s restart_count=%s status=%s',
-                  data.process.pm_id,
+      logger.warn("===========" +'ng-e.id-api event ======= restart_count=%s status=%s',
                   data.process.restart_time,
                   data.event);
     }
   });
 
   bus.on('log:err', function(data) {
-    logger.error("\t" + "\t" +"\t" + "\t"+ 'ERROR ng-e.id-api id=%s ==>%s', data.process.pm_id, data.data);
+    logger.error("===========" + 'ERROR ng-e.id-api id=%s ==>%s', data.process.pm_id, data.data);
   });
 
   bus.on('log:out', function(data) {
-    logger.log("\t" + "\t" +'ng-e.id-api id=%s "%s"', data.process.pm_id, data.data);
+    logger.log("===========" +'ng-e.id-api id=%s    %s', data.process.pm_id, data.data);
   });
 });

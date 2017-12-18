@@ -15,7 +15,7 @@
   },
   "apps": [
     {
-      "name": "pm2-syslog-mod",
+      "name": "pm2-syslog",
       "script": "app.js"
     }
   ],

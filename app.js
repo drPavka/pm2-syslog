@@ -3,9 +3,9 @@ var config = pmx.initModule();
 
 var pm2 = require('pm2');
 var SysLogger = require('ain2');
-var logger = new SysLogger({tag: 'pm2', facility: config.facility});
+var logger = new SysLogger({tag: 'e.id', facility: config.facility});
 
-var prefix = 'E.ID > ';
+var prefix = '';
 
 pm2.launchBus(function (err, bus) {
     bus.on('*', function (event, data) {
